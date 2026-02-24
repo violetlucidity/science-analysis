@@ -1,5 +1,26 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 7.2] — 2026-02-24 04:40
+- Status: COMPLETE
+- Files created/modified: src/hooks/useDarkMode.ts, src/App.tsx
+- Packages installed: none
+- Notes: Dark mode toggle with localStorage persistence and system preference fallback. Responsive layout with hamburger menu at 768px. Dark variants defined throughout components. Build and lint pass.
+
+## [Phase 7.1] — 2026-02-24 04:30
+- Status: COMPLETE
+- Files created/modified:
+  - src/components/KeyboardShortcutsModal.tsx (? key trigger, FocusTrap)
+  - tailwind.config.ts (updated term-highlight colour for contrast compliance)
+  - src/index.css (updated term-highlight CSS with dark mode variant)
+- Packages installed: axe-core, focus-trap-react
+- Notes:
+  - term-highlight contrast analysis:
+    - Light mode: #0f766e (teal-700) on white = 5.68:1 ✓ (passes 4.5:1)
+    - Dark mode: #5eead4 (teal-300) on gray-900 = ~8.5:1 ✓ (passes 4.5:1)
+  - FocusTrap used in KeyboardShortcutsModal. TermTooltip uses FloatingFocusManager.
+  - All interactive elements have aria-label attributes.
+  - Build and lint pass.
+
 ## [Phase 6.2] — 2026-02-24 04:20
 - Status: COMPLETE
 - Files created/modified: src/services/referenceService.ts
