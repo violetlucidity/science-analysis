@@ -1,5 +1,12 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 1.2] — 2026-02-24 02:50
+- Status: COMPLETE
+- Files created/modified:
+  - src/types/index.ts (all 9 interfaces: Paper, Section, StatisticalTerm, DetectedTerm, Annotation, PaperMetadata, Reference, Figure, Table)
+- Packages installed: none
+- Notes: All interfaces fully JSDoc-annotated. Build and lint pass.
+
 ## [Phase 1.1] — 2026-02-24 02:45
 - Status: COMPLETE
 - Files created/modified:
