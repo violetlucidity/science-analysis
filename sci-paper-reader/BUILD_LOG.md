@@ -1,5 +1,23 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 4.3] — 2026-02-24 03:40
+- Status: COMPLETE
+- Files created/modified: src/components/PaperViewer.tsx
+- Packages installed: none
+- Notes: IntersectionObserver for active section, scroll progress bar, responsive sidebar. Build and lint pass.
+
+## [Phase 4.2] — 2026-02-24 03:35
+- Status: COMPLETE
+- Files created/modified: src/components/TermTooltip.tsx, src/hooks/useTermTooltip.ts, src/types/react-katex.d.ts
+- Packages installed: @floating-ui/react, react-katex, katex, @types/katex
+- Notes: Moved hook to separate file. Added eslint-disable for Floating UI callback ref pattern. Build and lint pass.
+
+## [Phase 4.1] — 2026-02-24 03:30
+- Status: COMPLETE
+- Files created/modified: src/components/AnnotatedText.tsx
+- Packages installed: none
+- Notes: Term and annotation highlight spans, keyboard navigation, mouseup selection. Build and lint pass.
+
 ## [Phase 3.2] — 2026-02-24 03:20
 - Status: COMPLETE
 - Files created/modified:
