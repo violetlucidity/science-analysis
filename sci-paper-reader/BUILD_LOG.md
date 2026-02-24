@@ -1,5 +1,20 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 5.3] — 2026-02-24 04:00
+- Status: COMPLETE
+- Files created/modified: src/components/FigureViewer.tsx, src/components/TableViewer.tsx, src/utils/tableParser.ts
+- Packages installed: react-zoom-pan-pinch@3, @tanstack/react-table@8
+- Notes: Moved parseTablesFromText to utils/. TanStack warning is non-blocking. Build and lint pass.
+
+## [Phase 5.2] — 2026-02-24 03:55
+- Status: SKIPPED — ANTHROPIC_API_KEY not set
+
+## [Phase 5.1] — 2026-02-24 03:50
+- Status: COMPLETE
+- Files created/modified: src/hooks/useAnnotations.ts, src/components/AnnotationPopover.tsx
+- Packages installed: none
+- Notes: SHA-256 hash fallback for paper ID. Fixed setState-in-effect lint error. Build and lint pass.
+
 ## [Phase 4.3] — 2026-02-24 03:40
 - Status: COMPLETE
 - Files created/modified: src/components/PaperViewer.tsx
