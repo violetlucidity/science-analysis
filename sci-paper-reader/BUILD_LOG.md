@@ -1,5 +1,20 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 3.2] — 2026-02-24 03:20
+- Status: COMPLETE
+- Files created/modified:
+  - src/services/termDetectionService.ts
+  - src/types/ahocorasick.d.ts
+- Packages installed: ahocorasick@1.0.2
+- Notes: ahocorasick installed (no substitution needed). Manual TypeScript declaration file added. Word boundary checking added. Build and lint pass.
+
+## [Phase 3.1] — 2026-02-24 03:15
+- Status: COMPLETE
+- Files created/modified:
+  - src/data/statisticalTerms.json (89 entries)
+- Packages installed: none
+- Notes: 89 entries covering all required domains. Build and lint pass.
+
 ## [Phase 2.2] — 2026-02-24 03:05
 - Status: COMPLETE
 - Files created/modified:
