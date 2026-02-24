@@ -1,5 +1,11 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 8.1] — 2026-02-24 13:13
+- Status: COMPLETE
+- Files created/modified: package.json, vite.config.ts (import from vitest/config), src/test-setup.ts, src/services/__tests__/termDetectionService.test.ts, src/services/__tests__/pdfService.test.ts, src/services/__tests__/ingestService.test.ts, src/components/__tests__/AnnotatedText.test.tsx, src/components/__tests__/TermTooltip.test.tsx
+- Packages installed: vitest ^4.0.18, @testing-library/react ^16.3.2, @testing-library/user-event ^14.6.1, @testing-library/jest-dom ^6.9.1, jsdom ^28.1.0
+- Notes: 16 tests, 16 passed, 0 failed. Mocked @floating-ui/react, react-katex, katex CSS, pdfjs-dist, and service modules as needed. Body text in pdfService mock avoids strings starting with known section heading names (e.g. "background"). vite.config.ts changed to import defineConfig from vitest/config so the `test` block is type-safe.
+
 ## [Phase 7.2] — 2026-02-24 04:40
 - Status: COMPLETE
 - Files created/modified: src/hooks/useDarkMode.ts, src/App.tsx
