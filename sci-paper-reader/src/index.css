@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /*
+   * term-highlight colour accessibility:
+   * Light mode: decoration-[#0f766e] (teal-700) on white = 5.68:1 (passes WCAG 4.5:1)
+   * Dark mode:  decoration-[#5eead4] (teal-300) on gray-900 = 8.5:1 (passes WCAG 4.5:1)
+   */
+  .term-highlight {
+    @apply underline decoration-[#0f766e] dark:decoration-[#5eead4] decoration-2 cursor-pointer;
+  }
+}

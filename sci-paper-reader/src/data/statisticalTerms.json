@@ -1,0 +1,803 @@
+[
+  {
+    "term": "mean",
+    "aliases": ["arithmetic mean", "average", "μ", "x̄"],
+    "shortDefinition": "The sum of all values in a dataset divided by the number of values.",
+    "extendedExplanation": "The mean is the most common measure of central tendency. It is sensitive to outliers, meaning that extreme values can pull the mean away from the bulk of the data. For a population the mean is denoted μ, while for a sample it is denoted x̄.",
+    "formula": "\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i",
+    "exampleUsage": "The mean reaction time across participants was 342 ms (SD = 45 ms).",
+    "relatedTerms": ["median", "mode", "standard deviation", "variance"]
+  },
+  {
+    "term": "median",
+    "aliases": ["Mdn"],
+    "shortDefinition": "The middle value when a dataset is ordered from smallest to largest.",
+    "extendedExplanation": "The median is the value that separates the upper half from the lower half of a data sample. Unlike the mean, it is robust to outliers. For an even number of observations, the median is the average of the two central values.",
+    "formula": "",
+    "exampleUsage": "The median income in the sample was $52,000, while the mean was skewed to $68,000 by a few high earners.",
+    "relatedTerms": ["mean", "mode", "interquartile range", "skewness"]
+  },
+  {
+    "term": "mode",
+    "aliases": [],
+    "shortDefinition": "The value that appears most frequently in a dataset.",
+    "extendedExplanation": "A dataset can be unimodal (one mode), bimodal (two modes), or multimodal. The mode is the only measure of central tendency applicable to nominal data. It is less commonly used in scientific reporting than the mean or median.",
+    "formula": "",
+    "exampleUsage": "The mode of the Likert-scale responses was 4 (out of 5), indicating general agreement.",
+    "relatedTerms": ["mean", "median"]
+  },
+  {
+    "term": "standard deviation",
+    "aliases": ["SD", "σ", "s"],
+    "shortDefinition": "A measure of the spread of values in a dataset around the mean.",
+    "extendedExplanation": "Standard deviation is the square root of variance. A small standard deviation indicates values are clustered tightly around the mean; a large standard deviation indicates wide spread. Population standard deviation uses N in the denominator; sample standard deviation uses N−1 (Bessel's correction).",
+    "formula": "s = \\sqrt{\\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})^2}{n-1}}",
+    "exampleUsage": "Blood pressure values had a mean of 120 mmHg (SD = 12 mmHg) in the control group.",
+    "relatedTerms": ["variance", "mean", "standard error", "coefficient of variation"]
+  },
+  {
+    "term": "variance",
+    "aliases": ["σ²", "s²"],
+    "shortDefinition": "The average of the squared deviations from the mean.",
+    "extendedExplanation": "Variance quantifies how spread out the values in a dataset are. Because deviations are squared, variance is expressed in squared units of the original measurement, which can be harder to interpret than standard deviation. Sample variance uses N−1 as the denominator to provide an unbiased estimate.",
+    "formula": "s^2 = \\frac{\\sum_{i=1}^{n}(x_i - \\bar{x})^2}{n-1}",
+    "exampleUsage": "The variance in test scores was 144, corresponding to a standard deviation of 12 points.",
+    "relatedTerms": ["standard deviation", "mean", "ANOVA"]
+  },
+  {
+    "term": "standard error",
+    "aliases": ["SE", "SEM", "standard error of the mean"],
+    "shortDefinition": "An estimate of the variability of the sample mean across repeated samples.",
+    "extendedExplanation": "The standard error of the mean is calculated as the sample standard deviation divided by the square root of the sample size. It decreases as sample size increases, reflecting that larger samples yield more precise estimates of the population mean. SE is used to construct confidence intervals and perform hypothesis tests about means.",
+    "formula": "SE = \\frac{s}{\\sqrt{n}}",
+    "exampleUsage": "The mean score was 75.3 (SE = 1.8), suggesting a precise estimate given the large sample.",
+    "relatedTerms": ["standard deviation", "confidence interval", "sample size"]
+  },
+  {
+    "term": "interquartile range",
+    "aliases": ["IQR"],
+    "shortDefinition": "The range between the 25th percentile (Q1) and the 75th percentile (Q3) of a dataset.",
+    "extendedExplanation": "The IQR measures statistical dispersion and is resistant to outliers. It contains the middle 50% of the data. The IQR is used in constructing box plots and is the preferred spread measure for skewed distributions or when the median is the central tendency measure.",
+    "formula": "IQR = Q_3 - Q_1",
+    "exampleUsage": "Survival times had a median of 18 months (IQR: 12–28 months).",
+    "relatedTerms": ["median", "quartile", "skewness", "box plot"]
+  },
+  {
+    "term": "skewness",
+    "aliases": ["skew"],
+    "shortDefinition": "A measure of asymmetry of the probability distribution of a dataset around its mean.",
+    "extendedExplanation": "Positive skewness indicates a longer right tail; negative skewness indicates a longer left tail. A perfectly symmetric distribution has zero skewness. Skewness influences which measures of central tendency are most appropriate; for highly skewed data, the median is preferred over the mean.",
+    "formula": "\\text{Skewness} = \\frac{\\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^3}{s^3}",
+    "exampleUsage": "Income distributions typically show strong positive skewness, with most values clustered at lower levels and a long right tail.",
+    "relatedTerms": ["kurtosis", "mean", "median", "normal distribution"]
+  },
+  {
+    "term": "kurtosis",
+    "aliases": [],
+    "shortDefinition": "A measure of the 'tailedness' of the probability distribution of a dataset.",
+    "extendedExplanation": "High kurtosis (leptokurtic) indicates heavy tails and a sharp central peak. Low kurtosis (platykurtic) indicates light tails. Excess kurtosis is kurtosis minus 3, so a normal distribution has excess kurtosis of 0. Kurtosis is relevant for assessing whether a distribution meets the normality assumption for parametric tests.",
+    "formula": "\\text{Kurtosis} = \\frac{\\frac{1}{n}\\sum_{i=1}^{n}(x_i-\\bar{x})^4}{s^4}",
+    "exampleUsage": "The distribution of extreme weather events exhibited positive excess kurtosis, indicating heavier tails than a normal distribution.",
+    "relatedTerms": ["skewness", "normal distribution"]
+  },
+  {
+    "term": "coefficient of variation",
+    "aliases": ["CV", "relative standard deviation"],
+    "shortDefinition": "The ratio of the standard deviation to the mean, expressed as a percentage.",
+    "extendedExplanation": "The CV allows comparison of variability between datasets with different units or different means. A higher CV indicates greater relative variability. It is most meaningful for ratio-scale data where a true zero exists and the mean is positive.",
+    "formula": "CV = \\frac{s}{\\bar{x}} \\times 100\\%",
+    "exampleUsage": "Assay reproducibility was assessed using the coefficient of variation, which was below 5% across all replicates.",
+    "relatedTerms": ["standard deviation", "mean", "variance"]
+  },
+  {
+    "term": "p-value",
+    "aliases": ["p value", "probability value", "significance level"],
+    "shortDefinition": "The probability of obtaining results at least as extreme as those observed, assuming the null hypothesis is true.",
+    "extendedExplanation": "The p-value does not measure the probability that the null hypothesis is true, nor the effect size. Conventionally, a p-value below 0.05 is considered statistically significant, though this threshold is arbitrary. A small p-value provides evidence against the null hypothesis, but should be interpreted alongside effect size and confidence intervals.",
+    "formula": "",
+    "exampleUsage": "The intervention significantly reduced symptom scores (t(48) = 3.42, p = 0.001).",
+    "relatedTerms": ["null hypothesis", "Type I error", "statistical power", "confidence interval"]
+  },
+  {
+    "term": "null hypothesis",
+    "aliases": ["H₀", "H0"],
+    "shortDefinition": "The default hypothesis that there is no effect, difference, or relationship in the population.",
+    "extendedExplanation": "The null hypothesis represents the status quo or absence of an effect. Statistical testing aims to determine whether there is sufficient evidence to reject it. Failing to reject H₀ does not prove it is true; it only means insufficient evidence was found against it.",
+    "formula": "",
+    "exampleUsage": "The null hypothesis stated that there would be no difference in mean cholesterol levels between the treatment and control groups.",
+    "relatedTerms": ["alternative hypothesis", "p-value", "Type I error", "Type II error"]
+  },
+  {
+    "term": "alternative hypothesis",
+    "aliases": ["H₁", "H1", "Ha"],
+    "shortDefinition": "The hypothesis that there is an effect, difference, or relationship in the population.",
+    "extendedExplanation": "The alternative hypothesis is what the researcher aims to support by collecting evidence against the null hypothesis. It can be one-tailed (directional) or two-tailed (non-directional). Rejecting H₀ provides support for H₁, but does not definitively prove it.",
+    "formula": "",
+    "exampleUsage": "The alternative hypothesis predicted that the intervention group would score higher on the outcome measure than the control group.",
+    "relatedTerms": ["null hypothesis", "p-value", "statistical power"]
+  },
+  {
+    "term": "Type I error",
+    "aliases": ["false positive", "α error", "alpha error"],
+    "shortDefinition": "Rejecting a true null hypothesis; concluding an effect exists when it does not.",
+    "extendedExplanation": "The probability of a Type I error is the significance level (α), commonly set at 0.05. Controlling Type I error rate is the primary goal of setting a significance threshold. Multiple comparisons inflate the overall Type I error rate, necessitating correction procedures such as Bonferroni or Benjamini-Hochberg.",
+    "formula": "P(\\text{Type I error}) = \\alpha",
+    "exampleUsage": "With α = 0.05, there is a 5% probability of a Type I error—concluding a drug is effective when it is not.",
+    "relatedTerms": ["Type II error", "p-value", "Bonferroni correction", "false discovery rate"]
+  },
+  {
+    "term": "Type II error",
+    "aliases": ["false negative", "β error", "beta error"],
+    "shortDefinition": "Failing to reject a false null hypothesis; missing a real effect.",
+    "extendedExplanation": "The probability of a Type II error is denoted β, and statistical power equals 1 − β. Type II errors are often caused by inadequate sample size, small effect sizes, or high measurement variability. Researchers balance Type I and Type II error rates in study design through power analysis.",
+    "formula": "P(\\text{Type II error}) = \\beta",
+    "exampleUsage": "Due to the small sample size, the study had low power and was likely to commit a Type II error.",
+    "relatedTerms": ["Type I error", "statistical power", "sample size", "effect size"]
+  },
+  {
+    "term": "statistical power",
+    "aliases": ["power", "1-β"],
+    "shortDefinition": "The probability of correctly rejecting a false null hypothesis.",
+    "extendedExplanation": "Power equals 1 − β, where β is the Type II error rate. It depends on effect size, sample size, significance level (α), and variability. Conventionally, 80% power is considered the minimum acceptable in many fields. Power analysis is used during study design to determine the required sample size.",
+    "formula": "\\text{Power} = 1 - \\beta",
+    "exampleUsage": "A power analysis indicated that 64 participants per group were required to detect a medium effect size with 80% power at α = 0.05.",
+    "relatedTerms": ["Type II error", "sample size", "effect size", "p-value"]
+  },
+  {
+    "term": "confidence interval",
+    "aliases": ["CI"],
+    "shortDefinition": "A range of values that, with a specified probability, contains the true population parameter.",
+    "extendedExplanation": "A 95% confidence interval means that if the same study were repeated many times, approximately 95% of the computed intervals would contain the true parameter value. Wider intervals indicate greater uncertainty. CIs provide more information than p-values alone because they convey both the direction and magnitude of effects.",
+    "formula": "\\bar{x} \\pm z_{\\alpha/2} \\cdot \\frac{s}{\\sqrt{n}}",
+    "exampleUsage": "The odds ratio for disease was 2.3 (95% CI: 1.5–3.4), indicating a statistically significant elevated risk.",
+    "relatedTerms": ["standard error", "p-value", "mean"]
+  },
+  {
+    "term": "t-test",
+    "aliases": ["Student's t-test", "independent samples t-test"],
+    "shortDefinition": "A parametric test that compares the means of two groups or one group against a known value.",
+    "extendedExplanation": "The independent-samples t-test compares means from two separate groups. The one-sample t-test compares a sample mean to a hypothesised value. It assumes normally distributed data (or large samples by CLT) and homogeneity of variance. The test statistic follows a t-distribution under H₀.",
+    "formula": "t = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_p\\sqrt{\\frac{1}{n_1}+\\frac{1}{n_2}}}",
+    "exampleUsage": "An independent-samples t-test revealed that the treatment group scored significantly higher than the control group (t(58) = 2.74, p = 0.008).",
+    "relatedTerms": ["paired t-test", "ANOVA", "p-value", "Cohen's d"]
+  },
+  {
+    "term": "paired t-test",
+    "aliases": ["dependent samples t-test", "repeated measures t-test"],
+    "shortDefinition": "A t-test that compares two related measurements, such as pre- and post-test scores from the same participants.",
+    "extendedExplanation": "By analysing within-subject differences, the paired t-test reduces error variance and is more powerful than an independent-samples t-test when measurements are correlated. It requires that the differences between paired observations are normally distributed.",
+    "formula": "t = \\frac{\\bar{d}}{s_d / \\sqrt{n}}",
+    "exampleUsage": "A paired t-test showed a significant reduction in anxiety scores from baseline to post-intervention (t(29) = 4.15, p < 0.001).",
+    "relatedTerms": ["t-test", "Wilcoxon signed-rank test"]
+  },
+  {
+    "term": "ANOVA",
+    "aliases": ["analysis of variance", "one-way ANOVA"],
+    "shortDefinition": "A parametric test that compares means across three or more groups.",
+    "extendedExplanation": "ANOVA partitions total variance into between-group and within-group components, producing an F-ratio. A significant F indicates that at least one group mean differs from the others, but post-hoc tests are needed to identify which pairs differ. Assumptions include normality and homogeneity of variance.",
+    "formula": "F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}}",
+    "exampleUsage": "A one-way ANOVA revealed significant differences in mean pain scores among the three treatment conditions (F(2, 87) = 5.63, p = 0.005).",
+    "relatedTerms": ["MANOVA", "t-test", "eta-squared", "Kruskal-Wallis test"]
+  },
+  {
+    "term": "MANOVA",
+    "aliases": ["multivariate analysis of variance"],
+    "shortDefinition": "An extension of ANOVA that simultaneously tests differences across multiple dependent variables.",
+    "extendedExplanation": "MANOVA accounts for correlations among dependent variables and controls the overall Type I error rate across outcomes. It produces multivariate test statistics such as Wilks' Lambda, Pillai's trace, and Hotelling's T². If MANOVA is significant, univariate ANOVAs are typically run as follow-ups.",
+    "formula": "",
+    "exampleUsage": "A MANOVA was conducted to examine the effect of treatment on five physiological outcomes simultaneously.",
+    "relatedTerms": ["ANOVA", "multicollinearity", "Wilks' Lambda"]
+  },
+  {
+    "term": "chi-squared test",
+    "aliases": ["chi-square test", "χ² test", "Pearson chi-square"],
+    "shortDefinition": "A non-parametric test of association or goodness-of-fit for categorical data.",
+    "extendedExplanation": "The chi-squared test for independence tests whether two categorical variables are associated in a contingency table. The goodness-of-fit chi-square test compares observed frequencies to expected frequencies under a theoretical distribution. It requires adequate expected cell counts (typically ≥ 5); otherwise, Fisher's exact test is preferred.",
+    "formula": "\\chi^2 = \\sum \\frac{(O_i - E_i)^2}{E_i}",
+    "exampleUsage": "A chi-squared test showed a significant association between smoking status and disease outcome (χ²(1) = 8.43, p = 0.004).",
+    "relatedTerms": ["Fisher's exact test", "p-value", "odds ratio"]
+  },
+  {
+    "term": "Fisher's exact test",
+    "aliases": ["Fisher exact test"],
+    "shortDefinition": "An exact significance test for 2×2 contingency tables, used when expected cell counts are small.",
+    "extendedExplanation": "Fisher's exact test calculates the exact probability of observing the given or more extreme table configurations under the null hypothesis of independence. It is preferred over the chi-squared test when sample sizes are small or expected cell frequencies fall below 5. It can be extended to larger tables but is computationally intensive.",
+    "formula": "p = \\frac{(a+b)!(c+d)!(a+c)!(b+d)!}{a!\\,b!\\,c!\\,d!\\,n!}",
+    "exampleUsage": "Because cell counts were below 5, Fisher's exact test was used instead of the chi-squared test (p = 0.03).",
+    "relatedTerms": ["chi-squared test", "contingency table"]
+  },
+  {
+    "term": "Mann-Whitney U test",
+    "aliases": ["Mann-Whitney test", "Wilcoxon rank-sum test", "U test"],
+    "shortDefinition": "A non-parametric test that compares the distributions of two independent groups.",
+    "extendedExplanation": "The Mann-Whitney U test is the non-parametric equivalent of the independent-samples t-test. It ranks all observations jointly and compares the rank sums between groups. It requires only ordinal measurement and makes no assumption about the form of the distribution, making it robust to outliers.",
+    "formula": "U = n_1 n_2 + \\frac{n_1(n_1+1)}{2} - R_1",
+    "exampleUsage": "Pain scores were significantly lower in the treatment group than the control group (U = 234, p = 0.02).",
+    "relatedTerms": ["Wilcoxon signed-rank test", "t-test", "Kruskal-Wallis test"]
+  },
+  {
+    "term": "Wilcoxon signed-rank test",
+    "aliases": ["Wilcoxon test", "signed-rank test"],
+    "shortDefinition": "A non-parametric test for comparing two related samples or repeated measurements.",
+    "extendedExplanation": "The Wilcoxon signed-rank test is the non-parametric equivalent of the paired t-test. It ranks the absolute differences between paired observations and tests whether the median difference is zero. It does not require normality but assumes symmetric distribution of differences.",
+    "formula": "W = \\sum_{i=1}^{n} [\\text{sgn}(x_{2i}-x_{1i}) \\cdot R_i]",
+    "exampleUsage": "Because the difference scores were not normally distributed, a Wilcoxon signed-rank test was used to compare pre- and post-treatment values.",
+    "relatedTerms": ["Mann-Whitney U test", "paired t-test"]
+  },
+  {
+    "term": "Kruskal-Wallis test",
+    "aliases": ["Kruskal-Wallis H test"],
+    "shortDefinition": "A non-parametric equivalent of one-way ANOVA for comparing three or more independent groups.",
+    "extendedExplanation": "The Kruskal-Wallis test extends the Mann-Whitney U test to more than two groups by comparing rank sums. It requires only ordinal data and no normality assumption. A significant result indicates that at least one group differs, and post-hoc pairwise tests (e.g., Dunn's test) are used to identify specific differences.",
+    "formula": "H = \\frac{12}{n(n+1)}\\sum_{i=1}^{k}\\frac{R_i^2}{n_i} - 3(n+1)",
+    "exampleUsage": "A Kruskal-Wallis test revealed significant differences in median reaction times across four experimental conditions (H(3) = 14.2, p = 0.003).",
+    "relatedTerms": ["ANOVA", "Mann-Whitney U test"]
+  },
+  {
+    "term": "Bonferroni correction",
+    "aliases": ["Bonferroni adjustment", "Bonferroni method"],
+    "shortDefinition": "A conservative method for controlling the family-wise error rate by dividing the significance threshold by the number of comparisons.",
+    "extendedExplanation": "When conducting multiple hypothesis tests, the probability of at least one Type I error increases. The Bonferroni correction adjusts the significance level to α/m, where m is the number of comparisons. It is simple but can be overly conservative, reducing statistical power substantially when many comparisons are made.",
+    "formula": "\\alpha_{\\text{adjusted}} = \\frac{\\alpha}{m}",
+    "exampleUsage": "With 10 comparisons and α = 0.05, the Bonferroni-corrected threshold was p < 0.005.",
+    "relatedTerms": ["Type I error", "false discovery rate", "Benjamini-Hochberg procedure", "multiple comparisons"]
+  },
+  {
+    "term": "false discovery rate",
+    "aliases": ["FDR"],
+    "shortDefinition": "The expected proportion of rejected null hypotheses that are actually true (false positives among all discoveries).",
+    "extendedExplanation": "FDR control is less conservative than family-wise error rate control (e.g., Bonferroni) and is widely used in high-dimensional data analysis such as genomics. The most common FDR-controlling procedure is Benjamini-Hochberg. By tolerating a small proportion of false positives, FDR methods maintain higher statistical power.",
+    "formula": "FDR = E\\left[\\frac{V}{R}\\right]",
+    "exampleUsage": "Genome-wide association results were filtered using a false discovery rate threshold of 5%.",
+    "relatedTerms": ["Benjamini-Hochberg procedure", "Bonferroni correction", "multiple comparisons", "Type I error"]
+  },
+  {
+    "term": "Benjamini-Hochberg procedure",
+    "aliases": ["BH procedure", "BH correction"],
+    "shortDefinition": "A step-up procedure for controlling the false discovery rate across multiple hypothesis tests.",
+    "extendedExplanation": "The Benjamini-Hochberg procedure ranks p-values in ascending order and compares each to (i/m)·Q, where i is the rank, m is the total number of tests, and Q is the desired FDR level. It controls the expected proportion of false positives among all rejected tests. It is more powerful than the Bonferroni correction and is widely used in genomics and neuroimaging.",
+    "formula": "p_{(i)} \\leq \\frac{i}{m} \\cdot Q",
+    "exampleUsage": "After applying the Benjamini-Hochberg procedure at FDR = 0.05, 342 out of 10,000 genes remained statistically significant.",
+    "relatedTerms": ["false discovery rate", "Bonferroni correction", "multiple comparisons"]
+  },
+  {
+    "term": "multiple comparisons",
+    "aliases": ["multiple testing", "multiplicity problem"],
+    "shortDefinition": "The problem that conducting many statistical tests increases the probability of obtaining at least one false positive by chance.",
+    "extendedExplanation": "When m independent tests are performed at significance level α, the family-wise error rate is 1−(1−α)^m, which grows rapidly with m. Multiple comparisons corrections (e.g., Bonferroni, Benjamini-Hochberg) adjust for this inflation. The problem is particularly acute in fields with many outcome variables, such as neuroimaging and genomics.",
+    "formula": "P(\\geq 1 \\text{ Type I error}) = 1-(1-\\alpha)^m",
+    "exampleUsage": "The researchers applied a multiple comparisons correction because 25 brain regions were tested simultaneously.",
+    "relatedTerms": ["Bonferroni correction", "false discovery rate", "Type I error", "Benjamini-Hochberg procedure"]
+  },
+  {
+    "term": "Cohen's d",
+    "aliases": ["d", "standardised mean difference"],
+    "shortDefinition": "A measure of the standardised difference between two group means.",
+    "extendedExplanation": "Cohen's d expresses the difference between two means in units of standard deviation, allowing comparison across studies with different scales. Conventions: d = 0.2 is small, 0.5 is medium, 0.8 is large. It is widely used in meta-analyses and power calculations.",
+    "formula": "d = \\frac{\\bar{x}_1 - \\bar{x}_2}{s_{\\text{pooled}}}",
+    "exampleUsage": "The intervention produced a large effect on symptom reduction (Cohen's d = 0.91).",
+    "relatedTerms": ["effect size", "statistical power", "Cohen's f", "eta-squared"]
+  },
+  {
+    "term": "Cohen's f",
+    "aliases": ["f", "Cohen f"],
+    "shortDefinition": "An effect size measure for ANOVA, representing the ratio of the standard deviation of group means to the within-group standard deviation.",
+    "extendedExplanation": "Cohen's f is used in one-way ANOVA contexts and is the square root of η²/(1−η²). Conventions: f = 0.10 small, 0.25 medium, 0.40 large. It is used in power calculations for ANOVA designs.",
+    "formula": "f = \\sqrt{\\frac{\\eta^2}{1-\\eta^2}}",
+    "exampleUsage": "Power analysis using G*Power indicated that 45 participants per group were needed to detect a medium effect (f = 0.25) with 80% power.",
+    "relatedTerms": ["eta-squared", "Cohen's d", "ANOVA", "statistical power"]
+  },
+  {
+    "term": "eta-squared",
+    "aliases": ["η²", "eta squared"],
+    "shortDefinition": "The proportion of total variance in the dependent variable explained by an independent variable in ANOVA.",
+    "extendedExplanation": "Eta-squared ranges from 0 to 1. Conventions: 0.01 small, 0.06 medium, 0.14 large. It overestimates the population effect size because it is based on sample variance; partial eta-squared and omega-squared provide less biased alternatives.",
+    "formula": "\\eta^2 = \\frac{SS_{\\text{effect}}}{SS_{\\text{total}}}",
+    "exampleUsage": "Treatment condition explained 18% of variance in outcome scores (η² = 0.18), a large effect.",
+    "relatedTerms": ["partial eta-squared", "omega-squared", "Cohen's f", "ANOVA"]
+  },
+  {
+    "term": "partial eta-squared",
+    "aliases": ["partial η²", "ηp²"],
+    "shortDefinition": "The proportion of variance in a dependent variable explained by a factor, controlling for other factors in the model.",
+    "extendedExplanation": "Partial eta-squared is used in factorial ANOVA and ANCOVA designs. Unlike eta-squared, it uses only the error term for that specific factor rather than total sum of squares. This makes it comparable across studies but can inflate apparent effect sizes in multi-factor designs.",
+    "formula": "\\eta_p^2 = \\frac{SS_{\\text{effect}}}{SS_{\\text{effect}} + SS_{\\text{error}}}",
+    "exampleUsage": "The main effect of treatment had a medium partial eta-squared (ηp² = 0.07), indicating that 7% of variance not explained by other factors was attributable to treatment.",
+    "relatedTerms": ["eta-squared", "omega-squared", "ANOVA"]
+  },
+  {
+    "term": "omega-squared",
+    "aliases": ["ω²"],
+    "shortDefinition": "An effect size measure for ANOVA that provides an unbiased estimate of the population variance explained.",
+    "extendedExplanation": "Omega-squared corrects for the positive bias in eta-squared by accounting for degrees of freedom. It is generally recommended over eta-squared as a more accurate estimate of the true population effect size. Values can be negative when the true effect is very small.",
+    "formula": "\\omega^2 = \\frac{SS_{\\text{effect}} - df_{\\text{effect}} \\cdot MS_{\\text{error}}}{SS_{\\text{total}} + MS_{\\text{error}}}",
+    "exampleUsage": "The unbiased effect size estimate (ω² = 0.12) was slightly smaller than eta-squared (η² = 0.14) due to sample size correction.",
+    "relatedTerms": ["eta-squared", "partial eta-squared", "ANOVA"]
+  },
+  {
+    "term": "odds ratio",
+    "aliases": ["OR"],
+    "shortDefinition": "The ratio of the odds of an event occurring in one group to the odds of it occurring in another.",
+    "extendedExplanation": "An OR of 1 indicates no difference in odds between groups. OR > 1 indicates higher odds in the exposed/treatment group; OR < 1 indicates lower odds. The odds ratio approximates relative risk when the outcome is rare. It is the primary effect measure in logistic regression and case-control studies.",
+    "formula": "OR = \\frac{a/b}{c/d} = \\frac{ad}{bc}",
+    "exampleUsage": "Smokers had 3.5 times the odds of developing lung cancer compared to non-smokers (OR = 3.5, 95% CI: 2.1–5.8).",
+    "relatedTerms": ["relative risk", "risk difference", "logistic regression", "confidence interval"]
+  },
+  {
+    "term": "relative risk",
+    "aliases": ["RR", "risk ratio"],
+    "shortDefinition": "The ratio of the probability of an event in the exposed group to the probability in the unexposed group.",
+    "extendedExplanation": "Relative risk directly compares event probabilities rather than odds, making it more intuitive than the odds ratio. An RR of 2 means the exposed group has twice the risk of the outcome. It cannot be calculated from case-control studies and is used primarily in cohort studies and clinical trials.",
+    "formula": "RR = \\frac{P(\\text{event}|\\text{exposed})}{P(\\text{event}|\\text{unexposed})}",
+    "exampleUsage": "Participants who received the vaccine had half the risk of infection compared to the placebo group (RR = 0.50, 95% CI: 0.36–0.69).",
+    "relatedTerms": ["odds ratio", "risk difference", "number needed to treat"]
+  },
+  {
+    "term": "risk difference",
+    "aliases": ["RD", "absolute risk reduction", "ARR"],
+    "shortDefinition": "The absolute difference in event rates between two groups.",
+    "extendedExplanation": "Risk difference is an absolute measure of effect, contrasting with the relative risk which is a ratio. An RD of 0.05 means the event rate is 5 percentage points higher in one group. Absolute measures are important for clinical decision-making because they depend on baseline risk.",
+    "formula": "RD = P(\\text{event}|\\text{exposed}) - P(\\text{event}|\\text{unexposed})",
+    "exampleUsage": "The absolute risk reduction for myocardial infarction was 2% (95% CI: 0.5–3.5%), favouring the treatment group.",
+    "relatedTerms": ["relative risk", "number needed to treat", "odds ratio"]
+  },
+  {
+    "term": "number needed to treat",
+    "aliases": ["NNT"],
+    "shortDefinition": "The average number of patients who must receive a treatment for one additional patient to benefit.",
+    "extendedExplanation": "NNT is the reciprocal of the absolute risk reduction. Smaller NNT values indicate more effective treatments. NNT is clinically intuitive and helps translate statistical findings into practical treatment decisions. It can also be expressed as number needed to harm (NNH) for adverse events.",
+    "formula": "NNT = \\frac{1}{|RD|}",
+    "exampleUsage": "With an absolute risk reduction of 2%, the NNT was 50, meaning 50 patients need to be treated to prevent one additional event.",
+    "relatedTerms": ["risk difference", "relative risk", "absolute risk reduction"]
+  },
+  {
+    "term": "Pearson's r",
+    "aliases": ["Pearson correlation", "r", "Pearson product-moment correlation"],
+    "shortDefinition": "A measure of the linear relationship between two continuous variables, ranging from -1 to +1.",
+    "extendedExplanation": "Pearson's r measures both the strength and direction of a linear association. A value of +1 indicates perfect positive correlation; -1 indicates perfect negative correlation; 0 indicates no linear relationship. It assumes that both variables are continuous, normally distributed, and have a linear relationship.",
+    "formula": "r = \\frac{\\sum_{i=1}^{n}(x_i-\\bar{x})(y_i-\\bar{y})}{\\sqrt{\\sum_{i=1}^{n}(x_i-\\bar{x})^2 \\cdot \\sum_{i=1}^{n}(y_i-\\bar{y})^2}}",
+    "exampleUsage": "A strong positive correlation was found between hours of practice and performance score (r = 0.78, p < 0.001).",
+    "relatedTerms": ["Spearman's rho", "R-squared", "regression"]
+  },
+  {
+    "term": "Spearman's rho",
+    "aliases": ["Spearman correlation", "ρ", "rs", "Spearman rank correlation"],
+    "shortDefinition": "A non-parametric measure of the monotonic relationship between two variables, based on ranks.",
+    "extendedExplanation": "Spearman's rho is the Pearson correlation of the rank-transformed variables. It does not require normality or a linear relationship and is appropriate for ordinal data or non-normally distributed continuous data. Values range from -1 to +1 with the same interpretation as Pearson's r.",
+    "formula": "r_s = 1 - \\frac{6\\sum d_i^2}{n(n^2-1)}",
+    "exampleUsage": "Because the data were ordinal, Spearman's rho was used and revealed a moderate positive correlation (ρ = 0.55).",
+    "relatedTerms": ["Pearson's r", "Kendall's tau"]
+  },
+  {
+    "term": "linear regression",
+    "aliases": ["ordinary least squares regression", "OLS", "simple linear regression"],
+    "shortDefinition": "A statistical model that predicts a continuous outcome as a linear function of one or more predictors.",
+    "extendedExplanation": "Linear regression estimates coefficients by minimising the sum of squared residuals (OLS). The model assumes a linear relationship, homoscedasticity, independence of errors, and normality of residuals. Multiple linear regression extends this to multiple predictors. R-squared measures the proportion of variance in the outcome explained by the predictors.",
+    "formula": "y = \\beta_0 + \\beta_1 x_1 + \\cdots + \\beta_k x_k + \\varepsilon",
+    "exampleUsage": "Linear regression showed that each additional year of education was associated with a $3,200 increase in annual salary (β = 3200, p < 0.001).",
+    "relatedTerms": ["logistic regression", "R-squared", "residuals", "multicollinearity", "heteroscedasticity"]
+  },
+  {
+    "term": "logistic regression",
+    "aliases": ["logit regression", "binary logistic regression"],
+    "shortDefinition": "A regression model for binary outcomes that estimates the log-odds of the outcome as a linear function of predictors.",
+    "extendedExplanation": "Logistic regression uses the logistic (sigmoid) function to map a linear predictor to a probability between 0 and 1. Coefficients are interpreted as log-odds, or as odds ratios when exponentiated. It does not assume normality of predictors or homoscedasticity. Model fit is assessed via likelihood ratio tests and pseudo-R² measures.",
+    "formula": "\\log\\left(\\frac{p}{1-p}\\right) = \\beta_0 + \\beta_1 x_1 + \\cdots + \\beta_k x_k",
+    "exampleUsage": "Logistic regression identified age and BMI as significant predictors of diabetes diagnosis (OR = 1.04 per year, 95% CI: 1.02–1.07).",
+    "relatedTerms": ["odds ratio", "linear regression", "Poisson regression", "AIC", "BIC"]
+  },
+  {
+    "term": "Poisson regression",
+    "aliases": ["log-linear model", "Poisson log-linear regression"],
+    "shortDefinition": "A regression model for count outcomes that assumes the outcome follows a Poisson distribution.",
+    "extendedExplanation": "Poisson regression models the log of the expected count as a linear function of predictors. It is appropriate for rate outcomes (using an offset term for exposure time) and count data with no upper bound. The incidence rate ratio is obtained by exponentiating coefficients. Overdispersion (variance > mean) may require negative binomial regression instead.",
+    "formula": "\\log(\\mu) = \\beta_0 + \\beta_1 x_1 + \\cdots + \\beta_k x_k",
+    "exampleUsage": "Poisson regression modelled hospital readmission counts as a function of comorbidity score and length of stay.",
+    "relatedTerms": ["logistic regression", "linear regression", "overdispersion"]
+  },
+  {
+    "term": "mixed-effects model",
+    "aliases": ["mixed model", "multilevel model", "hierarchical linear model", "HLM", "LME"],
+    "shortDefinition": "A regression model that includes both fixed effects (population-level) and random effects (subject- or group-level) terms.",
+    "extendedExplanation": "Mixed-effects models handle non-independence of observations from clustered or repeated-measures data by modelling within-subject and between-subject variability separately. They can accommodate unbalanced designs and missing data better than traditional repeated-measures ANOVA. Fixed effects represent average relationships; random effects represent individual deviations.",
+    "formula": "y = X\\beta + Zu + \\varepsilon",
+    "exampleUsage": "A linear mixed-effects model with random intercepts per participant was used to account for repeated measurements at five time points.",
+    "relatedTerms": ["random effects", "fixed effects", "repeated measures", "linear regression"]
+  },
+  {
+    "term": "random effects",
+    "aliases": ["random factors", "random intercepts", "random slopes"],
+    "shortDefinition": "Model parameters that vary across groups or individuals and are assumed to be drawn from a distribution.",
+    "extendedExplanation": "Random effects model between-group variability by treating group-level deviations as random draws from a normal distribution. They account for non-independence in clustered data. Random intercepts allow baseline levels to vary; random slopes allow the effect of predictors to vary across groups. They are contrasted with fixed effects, which estimate a single value for each predictor.",
+    "formula": "u \\sim \\mathcal{N}(0, \\sigma^2_u)",
+    "exampleUsage": "Random intercepts for school were included to account for the clustering of students within schools.",
+    "relatedTerms": ["fixed effects", "mixed-effects model", "intraclass correlation"]
+  },
+  {
+    "term": "fixed effects",
+    "aliases": ["fixed factors", "fixed parameters"],
+    "shortDefinition": "Model parameters that represent constant, population-level relationships between predictors and the outcome.",
+    "extendedExplanation": "Fixed effects are estimated as single values applicable across all observations in the dataset. They answer the primary research question about average relationships or group differences. In panel data analysis, a fixed-effects model removes all time-invariant between-subject variation, controlling for unobserved confounders.",
+    "formula": "",
+    "exampleUsage": "The fixed effect of the intervention was a reduction of 4.2 points on the outcome scale (β = −4.2, 95% CI: −6.1 to −2.3).",
+    "relatedTerms": ["random effects", "mixed-effects model", "linear regression"]
+  },
+  {
+    "term": "multicollinearity",
+    "aliases": ["collinearity"],
+    "shortDefinition": "A condition in multiple regression where two or more predictor variables are highly correlated with each other.",
+    "extendedExplanation": "Multicollinearity inflates standard errors of regression coefficients, making it difficult to assess the individual contributions of correlated predictors. It is diagnosed using the variance inflation factor (VIF); values above 10 are commonly considered problematic. Solutions include removing correlated predictors, combining them (PCA), or regularisation methods such as ridge regression.",
+    "formula": "VIF_j = \\frac{1}{1-R_j^2}",
+    "exampleUsage": "Multicollinearity was detected between income and education level (VIF = 12.3), so income was removed from the final model.",
+    "relatedTerms": ["linear regression", "ridge regression", "LASSO", "overfitting"]
+  },
+  {
+    "term": "heteroscedasticity",
+    "aliases": ["heteroskedasticity", "non-constant variance"],
+    "shortDefinition": "A condition in regression where the variance of the residuals is not constant across levels of the predictors.",
+    "extendedExplanation": "Heteroscedasticity violates the OLS assumption of homoscedasticity (equal error variance) and leads to inefficient estimates and invalid standard errors. It is detected via residual plots or the Breusch-Pagan test. Remedies include robust standard errors (Huber-White), weighted least squares, or transforming the outcome variable.",
+    "formula": "\\text{Var}(\\varepsilon_i | x_i) \\neq \\sigma^2",
+    "exampleUsage": "Residual plots revealed heteroscedasticity; the authors therefore used heteroscedasticity-consistent standard errors.",
+    "relatedTerms": ["residuals", "linear regression", "homoscedasticity"]
+  },
+  {
+    "term": "R-squared",
+    "aliases": ["R²", "coefficient of determination"],
+    "shortDefinition": "The proportion of variance in the outcome explained by the regression model.",
+    "extendedExplanation": "R² ranges from 0 to 1; higher values indicate better model fit. It increases with every additional predictor even if the predictor is irrelevant, which motivates the adjusted R². R² does not indicate whether the model is correctly specified, nor whether the included predictors are causally related to the outcome.",
+    "formula": "R^2 = 1 - \\frac{SS_{\\text{res}}}{SS_{\\text{tot}}}",
+    "exampleUsage": "The regression model explained 64% of the variance in student performance (R² = 0.64).",
+    "relatedTerms": ["adjusted R-squared", "linear regression", "residuals"]
+  },
+  {
+    "term": "adjusted R-squared",
+    "aliases": ["adjusted R²", "R²adj"],
+    "shortDefinition": "A version of R-squared that penalises the addition of irrelevant predictors by adjusting for the number of predictors.",
+    "extendedExplanation": "Unlike R², adjusted R² can decrease when a predictor adds less information than expected by chance. It is more appropriate than R² for comparing models with different numbers of predictors. It is calculated by adjusting for degrees of freedom.",
+    "formula": "\\bar{R}^2 = 1 - (1-R^2)\\frac{n-1}{n-p-1}",
+    "exampleUsage": "After adding a fourth predictor, adjusted R² decreased from 0.61 to 0.59, suggesting the added predictor did not improve the model.",
+    "relatedTerms": ["R-squared", "AIC", "BIC", "overfitting"]
+  },
+  {
+    "term": "AIC",
+    "aliases": ["Akaike Information Criterion", "Akaike criterion"],
+    "shortDefinition": "A measure of model quality that balances goodness-of-fit against model complexity.",
+    "extendedExplanation": "AIC estimates the relative quality of statistical models for a given dataset. It penalises the likelihood by 2k, where k is the number of parameters. Lower AIC indicates a better model. AIC is used for model selection among non-nested models and does not provide an absolute test of model fit.",
+    "formula": "AIC = 2k - 2\\ln(\\hat{L})",
+    "exampleUsage": "Model comparison using AIC favoured the three-predictor model (AIC = 342) over the five-predictor model (AIC = 350).",
+    "relatedTerms": ["BIC", "adjusted R-squared", "overfitting", "logistic regression"]
+  },
+  {
+    "term": "BIC",
+    "aliases": ["Bayesian Information Criterion", "Schwarz criterion", "SBC"],
+    "shortDefinition": "A model selection criterion that penalises complexity more strongly than AIC, especially for larger samples.",
+    "extendedExplanation": "BIC substitutes 2k with k·ln(n) in the penalty term, so it penalises additional parameters more heavily as sample size grows. It tends to favour simpler models than AIC. BIC is consistent (selects the true model as n→∞) whereas AIC is not. Both criteria are used for model comparison; neither provides absolute evidence of model fit.",
+    "formula": "BIC = k\\ln(n) - 2\\ln(\\hat{L})",
+    "exampleUsage": "Based on BIC, the two-component mixture model was preferred over the three-component model.",
+    "relatedTerms": ["AIC", "Bayesian Information Criterion", "model selection"]
+  },
+  {
+    "term": "residuals",
+    "aliases": ["errors", "residual errors", "model residuals"],
+    "shortDefinition": "The differences between observed values and the values predicted by the regression model.",
+    "extendedExplanation": "Residual analysis is used to diagnose violations of regression assumptions: patterns in residual plots suggest non-linearity or heteroscedasticity, while Q-Q plots assess normality of residuals. Standardised and studentised residuals help identify outliers. Influential observations with high leverage can disproportionately affect parameter estimates.",
+    "formula": "e_i = y_i - \\hat{y}_i",
+    "exampleUsage": "Examination of residual plots showed no systematic pattern, supporting the assumption of homoscedasticity.",
+    "relatedTerms": ["linear regression", "heteroscedasticity", "R-squared", "overfitting"]
+  },
+  {
+    "term": "overfitting",
+    "aliases": ["overfit"],
+    "shortDefinition": "A modelling error that occurs when a model is too closely fitted to the training data and performs poorly on new data.",
+    "extendedExplanation": "Overfitting occurs when a model captures noise rather than the true underlying signal, leading to low bias but high variance. It is common when models have many parameters relative to the number of observations. Cross-validation, regularisation (LASSO, ridge), and information criteria (AIC, BIC) are used to detect and prevent overfitting.",
+    "formula": "",
+    "exampleUsage": "The complex model showed high R² on training data but poor performance on the test set, indicating overfitting.",
+    "relatedTerms": ["cross-validation", "LASSO", "ridge regression", "AIC", "adjusted R-squared"]
+  },
+  {
+    "term": "cross-validation",
+    "aliases": ["CV", "k-fold cross-validation", "leave-one-out cross-validation"],
+    "shortDefinition": "A resampling technique that evaluates model performance by repeatedly training on subsets and testing on held-out data.",
+    "extendedExplanation": "K-fold cross-validation splits data into k folds, trains on k−1 folds, and evaluates on the remaining fold, repeating k times. It provides an estimate of generalisation performance that is less biased than performance on the training set alone. Leave-one-out cross-validation (LOOCV) is a special case where k equals the sample size.",
+    "formula": "",
+    "exampleUsage": "Ten-fold cross-validation was used to estimate out-of-sample predictive performance of the classification model.",
+    "relatedTerms": ["overfitting", "LASSO", "AIC", "BIC"]
+  },
+  {
+    "term": "LASSO",
+    "aliases": ["lasso", "least absolute shrinkage and selection operator", "L1 regularisation"],
+    "shortDefinition": "A regularisation method that shrinks regression coefficients toward zero and can set some to exactly zero, performing variable selection.",
+    "extendedExplanation": "LASSO adds an L1 penalty (sum of absolute coefficients) to the regression loss function. The tuning parameter λ controls shrinkage; larger λ forces more coefficients to zero. Unlike ridge regression, LASSO produces sparse models and is used for both prediction and variable selection. The optimal λ is typically chosen by cross-validation.",
+    "formula": "\\min_{\\beta} \\left\\{ \\sum_{i=1}^n (y_i - \\hat{y}_i)^2 + \\lambda \\sum_{j=1}^p |\\beta_j| \\right\\}",
+    "exampleUsage": "LASSO regression selected 12 of 200 candidate biomarkers as predictors of disease progression.",
+    "relatedTerms": ["ridge regression", "cross-validation", "overfitting", "multicollinearity"]
+  },
+  {
+    "term": "ridge regression",
+    "aliases": ["Tikhonov regularisation", "L2 regularisation"],
+    "shortDefinition": "A regularisation method that adds an L2 penalty to the regression loss function, shrinking all coefficients toward zero but not to exactly zero.",
+    "extendedExplanation": "Ridge regression is particularly useful when multicollinearity is present, as it stabilises coefficient estimates. Unlike LASSO, it does not set coefficients to exactly zero, so it does not perform variable selection. The regularisation strength is controlled by λ, chosen via cross-validation. Ridge regression is a continuous shrinkage estimator.",
+    "formula": "\\min_{\\beta} \\left\\{ \\sum_{i=1}^n (y_i - \\hat{y}_i)^2 + \\lambda \\sum_{j=1}^p \\beta_j^2 \\right\\}",
+    "exampleUsage": "Ridge regression was applied to address severe multicollinearity among the 50 genetic predictors.",
+    "relatedTerms": ["LASSO", "multicollinearity", "cross-validation", "overfitting"]
+  },
+  {
+    "term": "Bayesian inference",
+    "aliases": ["Bayesian analysis", "Bayesian statistics"],
+    "shortDefinition": "A statistical framework that updates prior beliefs with observed data to produce posterior probability distributions.",
+    "extendedExplanation": "Bayesian inference uses Bayes' theorem to combine a prior distribution (pre-data beliefs) with the likelihood (data) to obtain a posterior distribution. It treats parameters as random variables with probability distributions rather than fixed unknowns. Inferences are made directly from the posterior, including credible intervals and Bayes factors.",
+    "formula": "P(\\theta|\\text{data}) \\propto P(\\text{data}|\\theta) \\cdot P(\\theta)",
+    "exampleUsage": "A Bayesian hierarchical model was used to estimate population-level effects while accounting for individual variability.",
+    "relatedTerms": ["prior distribution", "posterior distribution", "likelihood", "Bayes factor", "credible interval"]
+  },
+  {
+    "term": "prior distribution",
+    "aliases": ["prior", "prior probability"],
+    "shortDefinition": "The probability distribution that expresses beliefs about a parameter before observing the data.",
+    "extendedExplanation": "Priors encode pre-existing knowledge or assumptions. An informative prior is based on previous research; a weakly informative prior gently constrains estimates; a non-informative (flat) prior expresses minimal prior knowledge. The choice of prior can substantially influence posterior estimates, particularly with small samples.",
+    "formula": "P(\\theta)",
+    "exampleUsage": "A weakly informative normal prior centred at zero was placed on regression coefficients to regularise estimates.",
+    "relatedTerms": ["posterior distribution", "Bayesian inference", "likelihood"]
+  },
+  {
+    "term": "posterior distribution",
+    "aliases": ["posterior", "posterior probability"],
+    "shortDefinition": "The probability distribution of a parameter after updating the prior distribution with the observed data.",
+    "extendedExplanation": "The posterior combines prior beliefs with the evidence provided by the data via the likelihood function. It forms the basis for all Bayesian inferences, including point estimates (mean, median, or mode of the posterior), credible intervals, and model comparison using Bayes factors. As sample size increases, the posterior is increasingly dominated by the likelihood.",
+    "formula": "P(\\theta|\\text{data}) = \\frac{P(\\text{data}|\\theta) \\cdot P(\\theta)}{P(\\text{data})}",
+    "exampleUsage": "The posterior distribution for the treatment effect was centred at −2.3 with a 95% credible interval of −4.1 to −0.5.",
+    "relatedTerms": ["prior distribution", "Bayesian inference", "credible interval"]
+  },
+  {
+    "term": "likelihood",
+    "aliases": ["likelihood function", "log-likelihood"],
+    "shortDefinition": "A function that measures how probable the observed data are for a given set of model parameters.",
+    "extendedExplanation": "The likelihood function L(θ|data) is the probability of the data as a function of parameters θ. Maximum likelihood estimation (MLE) finds parameter values that maximise L. In Bayesian analysis, the likelihood combines with the prior to produce the posterior. The log-likelihood is used in practice because it converts products to sums.",
+    "formula": "L(\\theta | \\text{data}) = P(\\text{data} | \\theta)",
+    "exampleUsage": "Parameter estimates were obtained by maximising the log-likelihood of the Gaussian mixture model.",
+    "relatedTerms": ["Bayesian inference", "posterior distribution", "AIC", "BIC"]
+  },
+  {
+    "term": "Bayes factor",
+    "aliases": ["BF", "Bayes' factor"],
+    "shortDefinition": "The ratio of the marginal likelihoods of two models, quantifying the evidence for one model over another.",
+    "extendedExplanation": "A Bayes factor BF₁₀ > 1 supports the alternative model over the null; BF₁₀ < 1 supports the null. Jeffreys' scale provides rough guidelines: BF > 10 is strong evidence, BF > 100 is decisive. Unlike p-values, Bayes factors can quantify evidence for H₀, allowing 'acceptance' of the null hypothesis.",
+    "formula": "BF_{10} = \\frac{P(\\text{data}|H_1)}{P(\\text{data}|H_0)}",
+    "exampleUsage": "The Bayes factor provided strong evidence for an effect of the drug on recovery time (BF₁₀ = 15.3).",
+    "relatedTerms": ["Bayesian inference", "posterior distribution", "likelihood", "null hypothesis"]
+  },
+  {
+    "term": "credible interval",
+    "aliases": ["Bayesian credible interval", "highest density interval", "HDI", "CrI"],
+    "shortDefinition": "A range of values within which the parameter lies with the specified posterior probability.",
+    "extendedExplanation": "A 95% credible interval means there is 95% posterior probability that the parameter falls within the interval, given the prior and data. This direct probabilistic interpretation differs from the frequentist confidence interval. The highest density interval (HDI) is a specific type of credible interval containing the most probable parameter values.",
+    "formula": "P(\\theta \\in [a, b] | \\text{data}) = 0.95",
+    "exampleUsage": "The posterior mean treatment effect was −3.2 (95% CrI: −5.0 to −1.4), indicating a credible benefit.",
+    "relatedTerms": ["confidence interval", "Bayesian inference", "posterior distribution"]
+  },
+  {
+    "term": "Markov chain Monte Carlo",
+    "aliases": ["MCMC", "Markov Chain Monte Carlo"],
+    "shortDefinition": "A class of algorithms for sampling from probability distributions by constructing a Markov chain that has the desired distribution as its stationary distribution.",
+    "extendedExplanation": "MCMC methods (e.g., Metropolis-Hastings, Gibbs sampling, Hamiltonian Monte Carlo) are used when analytical integration of the posterior distribution is intractable. The algorithm generates correlated samples from the posterior; convergence is assessed via diagnostics like R-hat and trace plots. Stan and JAGS are common software implementations.",
+    "formula": "",
+    "exampleUsage": "Posterior samples were obtained via Hamiltonian Monte Carlo using Stan, running four chains of 2,000 iterations each.",
+    "relatedTerms": ["Bayesian inference", "posterior distribution", "credible interval"]
+  },
+  {
+    "term": "Bayesian Information Criterion",
+    "aliases": ["BIC", "Schwarz Bayesian Criterion"],
+    "shortDefinition": "A model selection criterion derived from Bayesian probability theory that penalises model complexity by the log of the sample size.",
+    "extendedExplanation": "BIC approximates the log marginal likelihood under certain conditions and tends to select simpler models than AIC, especially for large samples. It penalises additional parameters by k·ln(n), where k is the number of parameters and n is the sample size. Lower BIC values indicate better models. Despite its name, BIC does not require a Bayesian analysis.",
+    "formula": "BIC = k\\ln(n) - 2\\ln(\\hat{L})",
+    "exampleUsage": "BIC was used to select among competing factor analysis solutions, favouring the three-factor model.",
+    "relatedTerms": ["AIC", "model selection", "Bayesian inference"]
+  },
+  {
+    "term": "Kaplan-Meier estimator",
+    "aliases": ["Kaplan-Meier curve", "KM curve", "KM estimator", "product-limit estimator"],
+    "shortDefinition": "A non-parametric estimator of the survival function from lifetime data with censoring.",
+    "extendedExplanation": "The Kaplan-Meier estimator calculates the probability of surviving beyond each event time by multiplying conditional survival probabilities. It handles censored observations (participants who leave the study without experiencing the event). The resulting stepwise curve is used to visualise survival over time and to estimate median survival time.",
+    "formula": "\\hat{S}(t) = \\prod_{t_i \\leq t} \\left(1 - \\frac{d_i}{n_i}\\right)",
+    "exampleUsage": "Kaplan-Meier curves showed that median overall survival was 24 months in the treatment group versus 16 months in the control group.",
+    "relatedTerms": ["log-rank test", "censoring", "survival function", "median survival time"]
+  },
+  {
+    "term": "log-rank test",
+    "aliases": ["Mantel-Cox test", "Mantel log-rank test"],
+    "shortDefinition": "A non-parametric test that compares the survival distributions of two or more groups.",
+    "extendedExplanation": "The log-rank test compares observed versus expected event counts at each event time under the null hypothesis of equal survival curves. It is the most commonly used test for comparing Kaplan-Meier curves. It gives equal weight to early and late events; the Wilcoxon (Breslow) test gives more weight to early events.",
+    "formula": "\\chi^2 = \\frac{(\\sum_j(O_{1j} - E_{1j}))^2}{\\sum_j V_j}",
+    "exampleUsage": "A log-rank test confirmed significantly better survival in the treatment group compared to controls (χ²(1) = 7.4, p = 0.007).",
+    "relatedTerms": ["Kaplan-Meier estimator", "Cox proportional hazards model", "survival function"]
+  },
+  {
+    "term": "Cox proportional hazards model",
+    "aliases": ["Cox regression", "proportional hazards model", "Cox PH model"],
+    "shortDefinition": "A semi-parametric regression model for survival data that estimates the effect of predictors on the hazard rate.",
+    "extendedExplanation": "The Cox model assumes that the ratio of hazard rates between two groups (hazard ratio) is constant over time (proportional hazards assumption). It does not require specifying the baseline hazard function. Coefficients are exponentiated to obtain hazard ratios, which are interpreted as the multiplicative change in the instantaneous event rate per unit change in the predictor.",
+    "formula": "h(t|x) = h_0(t) \\cdot \\exp(\\beta_1 x_1 + \\cdots + \\beta_k x_k)",
+    "exampleUsage": "Cox regression showed that age significantly predicted mortality risk after adjusting for comorbidities (HR = 1.08 per year, 95% CI: 1.04–1.12).",
+    "relatedTerms": ["hazard ratio", "log-rank test", "Kaplan-Meier estimator", "censoring"]
+  },
+  {
+    "term": "hazard ratio",
+    "aliases": ["HR"],
+    "shortDefinition": "The ratio of the hazard rates in two groups, indicating the relative risk of an event at any given time point.",
+    "extendedExplanation": "A hazard ratio > 1 indicates higher risk in the exposed/treatment group; < 1 indicates lower risk. An HR of 2 means the event occurs at twice the rate in the exposed group at any point in time. Hazard ratios are estimated from Cox regression and are constant over time under the proportional hazards assumption.",
+    "formula": "HR = \\frac{h_1(t)}{h_0(t)}",
+    "exampleUsage": "The treated group had a 40% lower hazard of disease relapse (HR = 0.60, 95% CI: 0.44–0.82).",
+    "relatedTerms": ["Cox proportional hazards model", "relative risk", "survival function"]
+  },
+  {
+    "term": "censoring",
+    "aliases": ["censored observation", "right censoring", "left censoring"],
+    "shortDefinition": "The condition in survival analysis where the event of interest has not been observed for some participants by the end of the study.",
+    "extendedExplanation": "Right censoring is most common: participants are censored if they are still event-free at study end, withdraw, or are lost to follow-up. Kaplan-Meier and Cox regression appropriately handle censored observations. Interval censoring occurs when the event is known to fall within an interval. Ignoring censoring leads to biased survival estimates.",
+    "formula": "",
+    "exampleUsage": "Thirty percent of participants were censored because the study ended before they experienced the primary endpoint.",
+    "relatedTerms": ["Kaplan-Meier estimator", "Cox proportional hazards model", "survival function"]
+  },
+  {
+    "term": "survival function",
+    "aliases": ["S(t)", "survivor function", "reliability function"],
+    "shortDefinition": "The probability that a subject survives (does not experience the event) beyond time t.",
+    "extendedExplanation": "The survival function S(t) = P(T > t) is a monotonically decreasing function from 1 (at t=0) toward 0 as t increases. It is estimated non-parametrically by the Kaplan-Meier method or parametrically using distributions such as the exponential or Weibull. It is complementary to the cumulative hazard function H(t).",
+    "formula": "S(t) = P(T > t) = 1 - F(t)",
+    "exampleUsage": "The estimated survival function showed a 60% probability of remaining relapse-free at two years.",
+    "relatedTerms": ["Kaplan-Meier estimator", "hazard ratio", "censoring", "median survival time"]
+  },
+  {
+    "term": "median survival time",
+    "aliases": ["median survival", "median time to event"],
+    "shortDefinition": "The time at which 50% of the study population has experienced the event of interest.",
+    "extendedExplanation": "Median survival is read directly from the Kaplan-Meier curve as the time point where S(t) = 0.5. It is preferred over the mean survival time because it is less affected by extreme values and can be estimated even when some participants are censored. If fewer than 50% of the sample has experienced the event, the median survival time cannot be estimated.",
+    "formula": "\\hat{t}_{50}: \\hat{S}(t_{50}) = 0.5",
+    "exampleUsage": "Median overall survival was 18.4 months (95% CI: 15.1–21.7) in the experimental arm.",
+    "relatedTerms": ["Kaplan-Meier estimator", "survival function", "censoring"]
+  },
+  {
+    "term": "randomisation",
+    "aliases": ["randomization", "random assignment", "random allocation"],
+    "shortDefinition": "The process of randomly assigning participants to experimental conditions to eliminate systematic bias.",
+    "extendedExplanation": "Randomisation ensures that both known and unknown confounders are balanced across groups on average, allowing causal inference. Simple randomisation, block randomisation, and stratified randomisation are common approaches. Allocation concealment prevents knowledge of future assignments from influencing enrolment decisions.",
+    "formula": "",
+    "exampleUsage": "Participants were randomly allocated to treatment or control using a computer-generated random number sequence, stratified by site.",
+    "relatedTerms": ["blinding", "confounding variable", "internal validity", "randomised controlled trial"]
+  },
+  {
+    "term": "blinding",
+    "aliases": ["masking"],
+    "shortDefinition": "The practice of concealing treatment assignment from participants, investigators, or outcome assessors to prevent bias.",
+    "extendedExplanation": "Single blinding conceals assignment from participants only. Double blinding conceals it from both participants and investigators. Triple blinding also blinds outcome assessors. Blinding reduces performance bias (participants behaving differently if aware of their group) and detection bias (assessors rating outcomes differently by group).",
+    "formula": "",
+    "exampleUsage": "The trial was double-blind: neither participants nor outcome assessors knew whether participants received the active drug or the placebo.",
+    "relatedTerms": ["double-blind", "placebo", "randomisation", "internal validity"]
+  },
+  {
+    "term": "double-blind",
+    "aliases": ["double-blinded", "double-masked"],
+    "shortDefinition": "A study design in which both the participants and the investigators are unaware of the treatment assignment.",
+    "extendedExplanation": "Double blinding minimises both performance bias (from participants knowing their treatment) and assessment bias (from investigators knowing treatment when measuring outcomes). It is considered the gold standard for clinical trials evaluating subjective outcomes. It is not always feasible, e.g., for surgical vs. drug comparisons.",
+    "formula": "",
+    "exampleUsage": "A double-blind, placebo-controlled randomised trial found that the new analgesic reduced pain scores significantly compared to placebo.",
+    "relatedTerms": ["blinding", "placebo", "randomisation", "internal validity"]
+  },
+  {
+    "term": "placebo",
+    "aliases": ["sham treatment", "placebo control"],
+    "shortDefinition": "An inert treatment given to control group participants to mimic the appearance and delivery of the active treatment.",
+    "extendedExplanation": "Placebos control for the placebo effect—improvements attributable to participants' belief that they are receiving an active treatment. They also ensure that any procedure effects (e.g., taking a pill, receiving an injection) are equivalent across groups. The placebo response can be substantial in subjective outcomes such as pain and mood.",
+    "formula": "",
+    "exampleUsage": "Participants in the control arm received an identical-looking placebo pill to maintain blinding.",
+    "relatedTerms": ["blinding", "double-blind", "randomisation", "placebo effect"]
+  },
+  {
+    "term": "intention-to-treat",
+    "aliases": ["ITT", "intention to treat", "intent-to-treat"],
+    "shortDefinition": "An analysis strategy that includes all randomised participants in their original assigned group, regardless of adherence or dropout.",
+    "extendedExplanation": "The ITT principle preserves the benefits of randomisation by preventing bias from differential dropout or non-adherence. It provides a conservative estimate of treatment efficacy under real-world conditions. Modified ITT (mITT) excludes participants who never received any treatment but retains most of the ITT benefits.",
+    "formula": "",
+    "exampleUsage": "The intention-to-treat analysis showed a significant treatment benefit, even accounting for the 15% dropout rate.",
+    "relatedTerms": ["per-protocol analysis", "randomisation", "attrition bias", "internal validity"]
+  },
+  {
+    "term": "per-protocol analysis",
+    "aliases": ["PP analysis", "efficacy analysis"],
+    "shortDefinition": "An analysis that includes only participants who completed the study as planned and adhered to the protocol.",
+    "extendedExplanation": "Per-protocol analysis can overestimate treatment efficacy because it excludes participants who dropped out or did not adhere—groups that may differ systematically. It is used alongside intention-to-treat analysis to assess whether effects persist among adherent participants. Sensitivity analyses help assess the impact of missing data and non-adherence.",
+    "formula": "",
+    "exampleUsage": "The per-protocol analysis (n = 210) showed a larger treatment effect than the intention-to-treat analysis (n = 245), likely due to excluding non-adherent participants.",
+    "relatedTerms": ["intention-to-treat", "attrition bias", "randomisation"]
+  },
+  {
+    "term": "crossover design",
+    "aliases": ["crossover trial", "within-subject crossover"],
+    "shortDefinition": "A study design in which participants receive all treatments in a random sequence, serving as their own controls.",
+    "extendedExplanation": "Crossover designs increase statistical efficiency because within-subject variability is removed from the error term. A washout period between treatment periods prevents carryover effects. They are not suitable for treatments with permanent effects or fast-moving diseases where condition at baseline may change.",
+    "formula": "",
+    "exampleUsage": "A two-period crossover design was used to compare drug A and drug B, with a two-week washout period between treatments.",
+    "relatedTerms": ["factorial design", "randomisation", "carryover effect", "within-subject design"]
+  },
+  {
+    "term": "factorial design",
+    "aliases": ["factorial experiment", "2x2 factorial"],
+    "shortDefinition": "An experimental design that simultaneously tests two or more factors and their interactions.",
+    "extendedExplanation": "A 2×2 factorial design with factors A and B examines the main effects of A and B and the A×B interaction. Factorial designs are efficient because multiple questions are answered in a single experiment, and interactions reveal whether the effect of one factor depends on the level of another factor.",
+    "formula": "",
+    "exampleUsage": "A 2×2 factorial design examined the effects of exercise (yes/no) and diet (low-fat/standard) and their interaction on weight loss.",
+    "relatedTerms": ["ANOVA", "interaction effect", "crossover design"]
+  },
+  {
+    "term": "power calculation",
+    "aliases": ["sample size calculation", "power analysis", "a priori power analysis"],
+    "shortDefinition": "A pre-study calculation that determines the sample size needed to detect an effect of a given size with specified power.",
+    "extendedExplanation": "Power calculations require specifying the expected effect size, the significance level α, and the desired power (commonly 0.80). They prevent underpowered studies that waste resources and fail to detect true effects. Post-hoc power analysis using observed effect sizes is controversial and generally uninformative.",
+    "formula": "n = \\frac{(z_{\\alpha/2} + z_{\\beta})^2 \\cdot 2\\sigma^2}{\\delta^2}",
+    "exampleUsage": "A priori power analysis using G*Power indicated that 128 participants (64 per group) were required.",
+    "relatedTerms": ["statistical power", "sample size", "effect size", "Type II error"]
+  },
+  {
+    "term": "sample size",
+    "aliases": ["n", "N"],
+    "shortDefinition": "The number of observations or participants included in a study.",
+    "extendedExplanation": "Adequate sample size is crucial for sufficient statistical power and precise estimates. Larger samples produce smaller standard errors and narrower confidence intervals. Very large samples can detect trivially small effects that are statistically significant but practically meaningless. Sample size planning should consider effect size, variability, and the analytical method used.",
+    "formula": "",
+    "exampleUsage": "The final sample comprised 200 participants (n = 100 per group), which was the pre-specified target based on power analysis.",
+    "relatedTerms": ["statistical power", "power calculation", "standard error", "confidence interval"]
+  },
+  {
+    "term": "attrition bias",
+    "aliases": ["dropout bias", "loss to follow-up bias"],
+    "shortDefinition": "Bias caused by differential dropout between study groups that is related to the study outcome.",
+    "extendedExplanation": "Attrition bias occurs when participants who drop out differ systematically from those who remain, and this dropout is related to the outcome. It is a form of selection bias that threatens internal validity. Intention-to-treat analysis, multiple imputation for missing data, and reporting of dropout rates and reasons can mitigate its impact.",
+    "formula": "",
+    "exampleUsage": "Attrition bias was a concern because participants who reported the most side effects were more likely to withdraw from the active treatment arm.",
+    "relatedTerms": ["selection bias", "intention-to-treat", "internal validity", "missing data"]
+  },
+  {
+    "term": "selection bias",
+    "aliases": ["sampling bias", "recruitment bias"],
+    "shortDefinition": "Systematic differences in the characteristics of participants selected for a study compared to the target population.",
+    "extendedExplanation": "Selection bias threatens both internal validity (when it causes groups to differ at baseline) and external validity (when the sample is unrepresentative of the target population). Random sampling and randomisation minimise selection bias. Volunteer bias (self-selected samples being healthier or more motivated) is a common example.",
+    "formula": "",
+    "exampleUsage": "Participants recruited via social media tended to be younger and more health-conscious, raising concerns about selection bias and generalisability.",
+    "relatedTerms": ["attrition bias", "confounding variable", "internal validity", "external validity", "randomisation"]
+  },
+  {
+    "term": "confounding variable",
+    "aliases": ["confounder", "confounding factor", "lurking variable"],
+    "shortDefinition": "A variable that is associated with both the exposure and the outcome, potentially distorting the observed relationship.",
+    "extendedExplanation": "Confounders create spurious or masked associations between the exposure and outcome. They must be associated with the exposure (without being caused by it) and independently associated with the outcome. Randomisation eliminates confounding; in observational studies, adjustment via regression, matching, or stratification is used.",
+    "formula": "",
+    "exampleUsage": "Age was a potential confounder because it was associated with both exercise frequency and cardiovascular disease risk.",
+    "relatedTerms": ["selection bias", "internal validity", "randomisation", "regression"]
+  },
+  {
+    "term": "internal validity",
+    "aliases": [],
+    "shortDefinition": "The extent to which a study's results accurately reflect the true causal relationship between variables within the study population.",
+    "extendedExplanation": "Internal validity is threatened by confounding, selection bias, information bias, and reverse causality. Randomised controlled trials have high internal validity because randomisation eliminates confounding. Strong internal validity does not imply external validity—results may not generalise beyond the study sample.",
+    "formula": "",
+    "exampleUsage": "The randomised design ensured high internal validity, allowing confident causal conclusions about the treatment's effect.",
+    "relatedTerms": ["external validity", "confounding variable", "selection bias", "randomisation"]
+  },
+  {
+    "term": "external validity",
+    "aliases": ["generalisability", "generalizability", "ecological validity"],
+    "shortDefinition": "The extent to which a study's findings can be generalised beyond the specific study sample to other populations, settings, or conditions.",
+    "extendedExplanation": "External validity is determined by how representative the study sample is of the target population, and by how closely the study conditions reflect real-world conditions. It is often traded off against internal validity: highly controlled experiments may have lower external validity. Replication across diverse samples strengthens external validity.",
+    "formula": "",
+    "exampleUsage": "The study had limited external validity because it was conducted exclusively in university students aged 18–25.",
+    "relatedTerms": ["internal validity", "selection bias", "replication"]
+  },
+  {
+    "term": "replication",
+    "aliases": ["reproducibility", "replicability"],
+    "shortDefinition": "The ability to obtain the same or similar findings when a study is repeated with new data or by independent researchers.",
+    "extendedExplanation": "Replication is a cornerstone of the scientific method. Direct replication uses identical methods; conceptual replication tests the same hypothesis with different methods. The 'replication crisis' refers to the widespread failure to replicate published findings, attributed partly to publication bias, p-hacking, and small sample sizes.",
+    "formula": "",
+    "exampleUsage": "The landmark finding failed to replicate in three independent large-scale replication studies.",
+    "relatedTerms": ["external validity", "statistical power", "p-value", "effect size"]
+  }
+]
