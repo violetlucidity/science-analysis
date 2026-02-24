@@ -1,5 +1,17 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 6.2] — 2026-02-24 04:20
+- Status: COMPLETE
+- Files created/modified: src/services/referenceService.ts
+- Packages installed: none
+- Notes: CrossRef API with score threshold, rate-limited queue, citation marker detection. Fixed no-useless-escape lint error. Build and lint pass.
+
+## [Phase 6.1] — 2026-02-24 04:15
+- Status: COMPLETE
+- Files created/modified: src/hooks/useDocumentSearch.ts, src/components/SearchBar.tsx
+- Packages installed: fuse.js@7
+- Notes: Fuse.js search index, keyboard shortcut Ctrl+F/Cmd+F, match counter, Escape-to-clear. Build and lint pass.
+
 ## [Phase 5.3] — 2026-02-24 04:00
 - Status: COMPLETE
 - Files created/modified: src/components/FigureViewer.tsx, src/components/TableViewer.tsx, src/utils/tableParser.ts
