@@ -1,5 +1,21 @@
 # Build Log — Sci Paper Reader
 
+## [Phase 2.2] — 2026-02-24 03:05
+- Status: COMPLETE
+- Files created/modified:
+  - src/services/textService.ts
+  - src/services/markdownService.ts
+  - src/services/ingestService.ts
+- Packages installed: unified@11, remark-parse@11, remark-stringify@3
+- Notes: Build and lint pass. Fixed no-useless-escape lint error in textService.ts.
+
+## [Phase 2.1] — 2026-02-24 02:55
+- Status: COMPLETE
+- Files created/modified:
+  - src/services/pdfService.ts
+- Packages installed: pdfjs-dist@4
+- Notes: Fixed TypeScript error — RenderParameters requires `canvas` property. Build and lint pass.
+
 ## [Phase 1.2] — 2026-02-24 02:50
 - Status: COMPLETE
 - Files created/modified:
