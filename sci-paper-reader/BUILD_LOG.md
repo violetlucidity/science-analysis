@@ -1,5 +1,24 @@
 # Build Log — Sci Paper Reader
 
+## BUILD COMPLETE — 2026-02-24 13:16
+- Total files created: 30 TypeScript/TSX source files + 5 test files + config files
+- Total npm packages installed: react, react-dom, pdfjs-dist, unified, remark-parse, remark-stringify, @floating-ui/react, react-katex, katex, ahocorasick, react-zoom-pan-pinch, @tanstack/react-table, fuse.js, axe-core, focus-trap-react, vitest, @testing-library/react, @testing-library/user-event, @testing-library/jest-dom, jsdom, tailwindcss, typescript, vite, eslint, prettier (+ type packages)
+- Test results: 16 passed, 0 failed (5 test files)
+- Known limitations: Phase 5.2 (AI Explanation Panel) skipped — ANTHROPIC_API_KEY not set; large PDFs may process slowly; multi-column PDF detection is heuristic; CrossRef DOI resolution requires network access
+- Follow-up tasks: Add Rollup manual chunks to reduce bundle size warning; implement Phase 5.2 when API key is available; add E2E tests with Playwright
+
+## [Phase 8.2] — 2026-02-24 13:16
+- Status: COMPLETE
+- Files created/modified: README.md (full rewrite with features, prerequisites, Mermaid architecture diagram, contributor guide), CHANGELOG.md (initial release entry)
+- Packages installed: none
+- Notes: All exported functions and components already had JSDoc from earlier phases. Final build: 0 TypeScript errors, 0 ESLint errors, 1 pre-existing TanStack warning. Tests: 16/16 passed.
+
+## [Phase 8.1] — 2026-02-24 13:13
+- Status: COMPLETE
+- Files created/modified: package.json, vite.config.ts (import from vitest/config), src/test-setup.ts, src/services/__tests__/termDetectionService.test.ts, src/services/__tests__/pdfService.test.ts, src/services/__tests__/ingestService.test.ts, src/components/__tests__/AnnotatedText.test.tsx, src/components/__tests__/TermTooltip.test.tsx
+- Packages installed: vitest ^4.0.18, @testing-library/react ^16.3.2, @testing-library/user-event ^14.6.1, @testing-library/jest-dom ^6.9.1, jsdom ^28.1.0
+- Notes: 16 tests, 16 passed, 0 failed. Mocked @floating-ui/react, react-katex, katex CSS, pdfjs-dist, and service modules as needed. Body text in pdfService mock avoids strings starting with known section heading names (e.g. "background"). vite.config.ts changed to import defineConfig from vitest/config so the `test` block is type-safe.
+
 ## [Phase 7.2] — 2026-02-24 04:40
 - Status: COMPLETE
 - Files created/modified: src/hooks/useDarkMode.ts, src/App.tsx
